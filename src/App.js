@@ -1,5 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './assets/logo.svg';
+import image from './assets/coffee.png'
 import './App.css';
 
 function App() {
@@ -7,17 +8,19 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
         <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+          href='https://ko-fi.com/kofosu89'
+	        target='_blank'
+	        rel='noopener noreferrer'
+	      >
+	        <img
+	          className='coffee'
+	          height='40'
+	          src='https://az743702.vo.msecnd.net/cdn/kofi5.png?v=2'
+	          border='0'
+	          alt='Buy Me a Coffee at ko-fi.com'
+	        />
+	      </a>
       </header>
     </div>
   );
