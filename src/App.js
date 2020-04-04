@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from './components/Header';
 import GlobalChart from './components/GlobalChart';
+import TopCards from './components/TopCards';
 
 import './App.css';
 
@@ -21,6 +22,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+			<TopCards global={global} />
 			<GlobalChart global={global} />
     </div>
   );
