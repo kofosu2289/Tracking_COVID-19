@@ -19,7 +19,7 @@ export default function GlobalChart(props) {
 
 	return (
 		<div className='global-chart-container'>
-			<h3>Statistics By Country</h3>
+			<h3>Global Statistics By Country</h3>
 			<div className='global-chart'>
 				<BarChart
 					width={800}
@@ -43,7 +43,7 @@ export default function GlobalChart(props) {
 						height={20}
 						stroke='gray'
 						startIndex={0}
-						endIndex={10}
+						endIndex={15}
 					></Brush>
 				</BarChart>
 			</div>
