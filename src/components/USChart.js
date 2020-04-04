@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import {
 	BarChart,
 	Bar,
@@ -9,17 +9,17 @@ import {
 	Brush
 } from 'recharts';
 
-export default function GlobalChart(props) {
-	const data = props.global.map(country => ({
-		name: `${country.Country}`,
-		Total: `${country.TotalConfirmed}`,
-		Deaths: `${country.TotalDeaths}`,
-		Recoveries: `${country.TotalRecovered}`
+export default function USChart(props) {
+	const data = props.usa.map(state => ({
+		name: `${state.state}`,
+		Total: `${state.cases}`,
+		Deaths: `${state.deaths}`,
+		Recoveries: `${state.cases - state.active}`
 	}));
 
 	return (
 		<div className='global-chart-container'>
-			<h3>Statistics By Country</h3>
+			<h3>United States Statistics By State</h3>
 			<div className='global-chart'>
 				<BarChart
 					width={800}
@@ -32,22 +32,21 @@ export default function GlobalChart(props) {
 					}}
 				>
 					<CartesianGrid strokeDasharray='3 3' />
-					<XAxis dataKey='name' />					
+					<XAxis dataKey='name' />	
 					<Tooltip />
 					<Legend />
-					<Bar dataKey='Total' fill='#64DD9C' />
-					<Bar dataKey='Deaths' fill='#F65064' />
-					<Bar dataKey='Recoveries' fill='#449BE2' />
+					<Bar dataKey='Total' fill='#64dd9c' />
+					<Bar dataKey='Deaths' fill='#f65064' />
+					<Bar dataKey='Recoveries' fill='#449be2' />
 					<Brush
 						dataKey='name'
 						height={20}
 						stroke='gray'
 						startIndex={0}
-						endIndex={10}
+						endIndex={7}
 					></Brush>
 				</BarChart>
 			</div>
 		</div>
 	);
 }
-
