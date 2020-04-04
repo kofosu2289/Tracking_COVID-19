@@ -9,8 +9,8 @@ import {
   Brush
 } from 'recharts';
 
-export default function AustraliaChart(props) {
-  const data = props.australia.map(province => ({
+export default function CanadaChart(props) {
+  const data = props.canada.map(province => ({
     name: `${province.displayName}`,
     Total: `${province.totalConfirmed}`,
     Deaths: `${province.totalDeaths == null ? 0 : province.totalDeaths}`,
@@ -21,7 +21,7 @@ export default function AustraliaChart(props) {
 
   return (
     <div className='global-chart-container'>
-      <h3>Australia Statistics By Province</h3>
+      <h3>Canada Statistics By Province</h3>
       <div className='global-chart'>
         <BarChart
           width={800}

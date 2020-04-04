@@ -7,6 +7,7 @@ import PieChartComponent from './components/PieChart';
 import RadialChart from './components/RadialChart';
 import USChart from './components/USChart';
 import AustraliaChart from './components/AustraliaChart';
+import CanadaChart from './components/CanadaChart';
 
 import './App.css';
 
@@ -14,6 +15,7 @@ function App() {
 	const [global, setGlobal] = useState([]);
   const [usa, setUsa] = useState([]);
   const [australia, setAustralia] = useState([]);
+  const [canada, setCanada] = useState([]);
 	useEffect(() => {
 		axios
 			.get(`https://api.covid19api.com/summary`)
@@ -42,6 +44,16 @@ function App() {
       .catch(error => {
         console.log('The data was not returned', error);
       });
+    
+      axios
+      .get(`https://cors-anywhere.herokuapp.com/https://bing.com/covid/data`)
+      .then(response => {
+        console.log(response.data.areas);
+        setCanada(response.data.areas[14].areas);
+      })
+      .catch(error => {
+        console.log('The data was not returned', error);
+      });
 	}, []);
 
   return (
@@ -53,6 +65,7 @@ function App() {
 					<GlobalChart global={global} />
           <USChart usa={usa} />
           <AustraliaChart australia={australia} />
+          <CanadaChart canada={canada} />
     		</div>
 				<div className='other-data'>
 					<PieChartComponent global={global} />
