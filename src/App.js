@@ -3,6 +3,8 @@ import axios from 'axios';
 import Header from './components/Header';
 import GlobalChart from './components/GlobalChart';
 import TopCards from './components/TopCards';
+import PieChartComponent from './components/PieChart';
+import RadialChart from './components/RadialChart';
 
 import './App.css';
 
@@ -22,9 +24,17 @@ function App() {
   return (
     <div className="App">
       <Header />
-			<TopCards global={global} />
-			<GlobalChart global={global} />
-    </div>
+			<div className='body'>
+				<div>
+					<TopCards global={global} />
+					<GlobalChart global={global} />
+    		</div>
+				<div>
+					<PieChartComponent global={global} />
+					<RadialChart />
+				</div>
+			</div>
+		</div>
   );
 }
 
