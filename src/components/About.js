@@ -39,7 +39,7 @@ const About = () => {
       </ul>
       <br />
       <p className='source'>
-        source:{' '}
+        Source:{' '}
         <a
           href='https://www.cdc.gov/coronavirus/2019-ncov/index.html'
           target='_blank'
