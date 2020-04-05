@@ -11,6 +11,7 @@ import CanadaChart from './components/CanadaChart';
 import EuropeChart from './components/EuropeChart';
 import LatinAmericaChart from './components/LatinAmericaChart';
 import USChart from './components/USChart';
+import About from './components/About';
 
 import './App.css';
 
@@ -66,10 +67,15 @@ function App() {
           <EuropeChart europe={countries} />
           <LatinAmericaChart latinAmerica={countries} />
     		</div>
-				<div className='other-data'>
-					<PieChartComponent global={global} />
-					<RadialChart />
-				</div>
+        <div>
+          <div className='other-data-container'>
+            <div className='other-data'>
+              <PieChartComponent global={global} />
+              <RadialChart />
+            </div>
+            <About />
+          </div>
+        </div>
 			</div>
 		</div>
   );
