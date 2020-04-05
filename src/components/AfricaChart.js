@@ -6,7 +6,8 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  Brush
+  Brush,
+  ResponsiveContainer
 } from 'recharts';
 
 export default function AfricaChart(props) {
@@ -59,36 +60,35 @@ export default function AfricaChart(props) {
     Deaths: `${country.TotalDeaths == null ? 0 : country.TotalDeaths}`,
     Recoveries: `${country.TotalRecovered == null ? 0 : country.TotalRecovered}`
   }));
-
   return (
     <div className='global-chart-container'>
       <h3>Africa Statistics By Country</h3>
       <div className='global-chart'>
-        <BarChart
-          width={800}
-          height={500}
-          data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            bottom: 5
-          }}
-        >
-          <CartesianGrid strokeDasharray='3 3' />
-          <XAxis dataKey='name' />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey='Total' fill='#64DD9C' />
-          <Bar dataKey='Deaths' fill='#F65064' />
-          <Bar dataKey='Recoveries' fill='#449BE2' />
-          <Brush
-            dataKey='name'
-            height={20}
-            stroke='gray'
-            startIndex={0}
-            endIndex={7}
-          ></Brush>
-        </BarChart>
+        <ResponsiveContainer width={'98%'} height={500}>
+          <BarChart
+            data={data}
+            margin={{
+              top: 5,
+              right: 30,
+              bottom: 5
+            }}
+          >
+            <CartesianGrid strokeDasharray='3 3' />
+            <XAxis dataKey='name' />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey='Total' fill='#64DD9C' />
+            <Bar dataKey='Deaths' fill='#F65064' />
+            <Bar dataKey='Recoveries' fill='#449BE2' />
+            <Brush
+              dataKey='name'
+              height={20}
+              stroke='gray'
+              startIndex={0}
+              endIndex={7}
+            ></Brush>
+          </BarChart>
+        </ResponsiveContainer>
       </div>
     </div>
   );
