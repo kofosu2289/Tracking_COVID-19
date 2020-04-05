@@ -8,6 +8,7 @@ import RadialChart from './components/RadialChart';
 import AfricaChart from './components/AfricaChart';
 import AustraliaChart from './components/AustraliaChart';
 import CanadaChart from './components/CanadaChart';
+import EuropeChart from './components/EuropeChart';
 import USChart from './components/USChart';
 
 import './App.css';
@@ -61,6 +62,7 @@ function App() {
           <AustraliaChart australia={australia} />
           <CanadaChart canada={canada} />
           <AfricaChart africa={countries} />
+          <EuropeChart europe={countries} />
     		</div>
 				<div className='other-data'>
 					<PieChartComponent global={global} />
