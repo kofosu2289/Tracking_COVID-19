@@ -10,7 +10,7 @@ import {
   ResponsiveContainer
 } from 'recharts';
 
-export default function CanadaChart(props) {
+const CanadaChart = props => {
   const data = props.canada.map(province => ({
     name: `${province.province}`,
     Total: `${province.latest.confirmed}`,
@@ -54,3 +54,5 @@ export default function CanadaChart(props) {
     </div>
   );
 }
+
+export default CanadaChart;

@@ -10,7 +10,7 @@ import {
   ResponsiveContainer
 } from 'recharts';
 
-export default function GlobalChart(props) {
+const GlobalChart = props => {
   const data = props.global.map(country => ({
     name: `${country.Country}`,
     Total: `${country.TotalConfirmed}`,
@@ -52,3 +52,5 @@ export default function GlobalChart(props) {
     </div>
   );
 }
+
+export default GlobalChart;

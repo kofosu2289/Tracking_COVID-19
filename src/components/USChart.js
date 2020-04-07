@@ -3,7 +3,6 @@ import {
   BarChart,
   Bar,
   XAxis,
-  YAxis,
   CartesianGrid,
   Tooltip,
   Legend,
@@ -11,7 +10,7 @@ import {
   ResponsiveContainer
 } from 'recharts';
 
-export default function USChart(props) {
+const USChart = props => {
   const data = props.usa.map(state => ({
     name: `${state.state}`,
     Total: `${state.cases}`,
@@ -53,3 +52,5 @@ export default function USChart(props) {
     </div>
   );
 }
+
+export default USChart;

@@ -10,7 +10,7 @@ import {
   ResponsiveContainer
 } from 'recharts';
 
-export default function AfricaChart(props) {
+const AfricaChart = props => {
   const countries = props.africa.filter(
     name =>
       name.Country === 'South Africa' ||
@@ -93,3 +93,5 @@ export default function AfricaChart(props) {
     </div>
   );
 }
+
+export default AfricaChart;

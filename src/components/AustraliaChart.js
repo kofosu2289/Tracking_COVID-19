@@ -3,7 +3,6 @@ import {
   BarChart,
   Bar,
   XAxis,
-  YAxis,
   CartesianGrid,
   Tooltip,
   Legend,
@@ -11,7 +10,7 @@ import {
   ResponsiveContainer
 } from 'recharts';
 
-export default function AustraliaChart(props) {
+const AustraliaChart = props => {
   const data = props.australia.map(province => ({
     name: `${province.province}`,
     Total: `${province.latest.confirmed}`,
@@ -35,7 +34,6 @@ export default function AustraliaChart(props) {
           >
             <CartesianGrid strokeDasharray='3 3' />
             <XAxis dataKey='name' />
-            <YAxis />
             <Tooltip />
             <Legend />
             <Bar dataKey='Total' fill='#64DD9C' />
@@ -54,3 +52,5 @@ export default function AustraliaChart(props) {
     </div>
   );
 }
+
+export default AustraliaChart;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function TopCards(props) {
+const TopCards = props => {
 	const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
 	let totalCaseNumbers = props.global.map(country =>
@@ -45,3 +45,5 @@ export default function TopCards(props) {
 		</div>
 	);
 }
+
+export default TopCards;

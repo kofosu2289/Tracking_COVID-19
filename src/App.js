@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import Header from './components/Header';
 import GlobalChart from './components/GlobalChart';
 import TopCards from './components/TopCards';
@@ -12,18 +11,18 @@ import EuropeChart from './components/EuropeChart';
 import LatinAmericaChart from './components/LatinAmericaChart';
 import USChart from './components/USChart';
 import About from './components/About';
+import { getGlobal, getUsa, getAusCan } from './helpers/fetchData';
 
 import './App.css';
 
-function App() {
+const App = () => {
 	const [global, setGlobal] = useState([]);
   const [usa, setUsa] = useState([]);
   const [australia, setAustralia] = useState([]);
   const [canada, setCanada] = useState([]);
   const [countries, setCountries] = useState([]);
 	useEffect(() => {
-		axios
-			.get(`https://api.covid19api.com/summary`)
+		getGlobal
 			.then(response => {
         setGlobal(response.data.Countries);
         setCountries(response.data.Countries);
@@ -32,8 +31,7 @@ function App() {
 				console.log('The data was not returned', error);
 			});
 
-		axios
-			.get('https://corona.lmao.ninja/states')
+    getUsa
 			.then(response => {
 				setUsa(response.data);
 			})
@@ -41,10 +39,8 @@ function App() {
 				console.log('The data was not returned', error);
       });
 
-    axios
-      .get(`https://cors-anywhere.herokuapp.com/https://covid19api.xapix.io/v2/locations`)
+    getAusCan
       .then(response => {
-        console.log(response.data.locations);
         setAustralia(response.data.locations.slice(8, 17));
         setCanada(response.data.locations.slice(35, 46));
       })

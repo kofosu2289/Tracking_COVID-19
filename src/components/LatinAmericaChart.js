@@ -3,7 +3,6 @@ import {
   BarChart,
   Bar,
   XAxis,
-  YAxis,
   CartesianGrid,
   Tooltip,
   Legend,
@@ -11,7 +10,7 @@ import {
   ResponsiveContainer
 } from 'recharts';
 
-export default function LatinAmericaChart(props) {
+const LatinAmericaChart = props => {
   const countries = props.latinAmerica.filter(
     name =>
       name.Country === 'Brazil' ||
@@ -74,3 +73,5 @@ export default function LatinAmericaChart(props) {
     </div>
   );
 }
+
+export default LatinAmericaChart;

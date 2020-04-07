@@ -1,7 +1,7 @@
 import React from 'react';
 import { PieChart, Pie, Cell, Legend } from 'recharts';
 
-export default function PieChartComponent(props) {
+const PieChartComponent = props => {
 	const reducer = (accumulator, currentValue) => accumulator + currentValue;
 	let totalCaseNumbers = props.global.map(country =>
 		parseInt(`${country.TotalConfirmed}`)
@@ -34,8 +34,7 @@ export default function PieChartComponent(props) {
     midAngle,
     innerRadius,
     outerRadius,
-    percent,
-    index
+    percent
   }) => {
     const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
     const x = cx + radius * Math.cos(-midAngle * RADIAN);
@@ -76,3 +75,5 @@ export default function PieChartComponent(props) {
 		</div>
 	);
 }
+
+export default PieChartComponent;

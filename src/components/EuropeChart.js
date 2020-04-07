@@ -10,7 +10,7 @@ import {
   ResponsiveContainer
 } from 'recharts';
 
-export default function EuropeChart(props) {
+const EuropeChart = props => {
   const countries = props.europe.filter(
     name =>
       name.Country === 'Italy' ||
@@ -87,3 +87,5 @@ export default function EuropeChart(props) {
     </div>
   );
 }
+
+export default EuropeChart;
