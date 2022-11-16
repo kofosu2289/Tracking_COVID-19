@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 // import GlobalChart from './components/GlobalChart';
-import TopCards from './components/TopCards';
+import TopCardsContainer from './containers/TopCardsContainer';
 import PieChartComponent from './components/PieChart';
 import RadialChart from './components/RadialChart';
 // import AfricaChart from './components/AfricaChart';
@@ -24,91 +24,8 @@ const App = () => {
   const [australia, setAustralia] = useState([]);
   const [canada, setCanada] = useState([]);
   const [countries, setCountries] = useState([]);
-  // const allOptions = {
-  //   method: 'GET',
-  //   url: 'https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/',
-  //   headers: {
-  //     'X-RapidAPI-Key': '6708e42ec2mshefbfae2c8a1a1f5p180f65jsn7f9353a66bf6',
-  //     'X-RapidAPI-Host': 'vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com'
-  //   }
-  // };
-
-  // const asiaOptions = {
-  //   method: 'GET',
-  // url: 'https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/asia',
-  // headers: {
-  //   'X-RapidAPI-Key': '6708e42ec2mshefbfae2c8a1a1f5p180f65jsn7f9353a66bf6',
-  //   'X-RapidAPI-Host': 'vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com'
-  // }
-  // }
-
-  // const africaOptions = {
-  //   method: 'GET',
-  //   url: 'https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/africa',
-  //   headers: {
-  //     'X-RapidAPI-Key': '6708e42ec2mshefbfae2c8a1a1f5p180f65jsn7f9353a66bf6',
-  //     'X-RapidAPI-Host': 'vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com'
-  //   }
-  // };
   
-  // const allData = axios.request(allOptions).then(function (response) {
-  //   console.log(response.data);
-  // }).catch(function (error) {
-  //   console.error(error);
-  // });
-
-  // const asiaData = axios.request(asiaOptions).then(function (response) {
-  //   console.log(response.data);
-  // }).catch(function (error) {
-  //   console.error(error);
-  // });
-
-  // const africaData = axios.request(africaOptions).then(function (response) {
-  //   console.log(response.data);
-  // }).catch(function (error) {
-  //   console.error(error);
-  // });
-
-  // console.log({allData})
-  // console.log({asiaData})
-  // console.log({africaData})
-
-  // const options = {
-  //   method: 'GET',
-  //   url: 'https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/country-report-iso-based/Honduras/hnd',
-  //   headers: {
-  //     'X-RapidAPI-Key': '6708e42ec2mshefbfae2c8a1a1f5p180f65jsn7f9353a66bf6',
-  //     'X-RapidAPI-Host': 'vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com'
-  //   }
-  // };
-
-  // const getHonduras = axios.request(options).then(function (response) {
-  //   console.log(response.data);
-  // }).catch(function (error) {
-  //   console.error(error);
-  // });
-  // const fetchWorldData = () => {
-  //   const { data } = useAxios({
-  //   method: 'GET',
-  //   url: 'https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/countries',
-  //   headers: {
-  //     'X-RapidAPI-Key': '6708e42ec2mshefbfae2c8a1a1f5p180f65jsn7f9353a66bf6',
-  //     'X-RapidAPI-Host': 'vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com'
-  //   }
-  // })
-  
-  // }
-  // console.log(getHonduras)
-	useEffect(() => {
-		// getGlobal
-		// 	.then(response => {
-    //     setGlobal(response.data.Countries);
-    //     setCountries(response.data.Countries);
-		// 	})
-		// 	.catch(error => {
-		// 		console.log('The data was not returned', error);
-		// 	});
-    
+	useEffect(() => {    
     getUsa
 			.then(response => {
 				setUsa(response.data);
@@ -132,7 +49,7 @@ const App = () => {
       <Header />
 			<div className='body'>
 				<div>
-					<TopCards global={global} worldData={worldData}/>
+					<TopCardsContainer/>
 					{/* <GlobalChart global={global} worldData={worldData} /> */}
           {/* <USChart usa={usa} />
           <AustraliaChart australia={australia} />
