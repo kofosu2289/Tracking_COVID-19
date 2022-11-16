@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 // import GlobalChart from './components/GlobalChart';
+import GlobalChartContainer from './containers/GlobalChartContainer';
 import TopCardsContainer from './containers/TopCardsContainer';
 import PieChartComponent from './components/PieChart';
 import RadialChart from './components/RadialChart';
@@ -51,6 +52,7 @@ const App = () => {
 				<div>
 					<TopCardsContainer/>
 					{/* <GlobalChart global={global} worldData={worldData} /> */}
+          <GlobalChartContainer />
           {/* <USChart usa={usa} />
           <AustraliaChart australia={australia} />
           <CanadaChart canada={canada} />
