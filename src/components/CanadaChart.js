@@ -10,13 +10,16 @@ import {
   ResponsiveContainer
 } from 'recharts';
 
+import '../App.css'
+
 const CanadaChart = props => {
-  const data = props.canada.map(province => ({
+  const {data} = props;
+  const canadaData = data.map(province => ({
     name: `${province.province}`,
-    Total: `${province.latest.confirmed}`,
-    Deaths: `${province.latest.deaths == null ? 0 : province.latest.deaths}`,
+    Total: `${province.confirmed}`,
+    Deaths: `${province.deaths == null ? 0 : province.deaths}`,
     Recoveries: `${
-      province.latest.recovered == null ? 0 : province.latest.recovered
+      province.recovered == null ? 0 : province.recovered
     }`
   }));
   return (
@@ -27,7 +30,7 @@ const CanadaChart = props => {
           <BarChart
             width={800}
             height={500}
-            data={data}
+            data={canadaData}
             margin={{
               top: 5,
               right: 30,

@@ -10,13 +10,23 @@ import {
   ResponsiveContainer
 } from 'recharts';
 
+import '../App.css'
+
 const USChart = props => {
-  const data = props.usa.map(state => ({
-    name: `${state.state}`,
-    Total: `${state.cases}`,
-    Deaths: `${state.deaths}`,
-    Recoveries: `${state.cases - state.active}`
-  }));
+  // const data = props.usa.map(state => ({
+  //   name: `${state.state}`,
+  //   Total: `${state.cases}`,
+  //   Deaths: `${state.deaths}`,
+  //   Recoveries: `${state.cases - state.active}`
+  // }));
+const {data} = props
+const usData = data.map(state => ({
+  name: `${state.province}`,
+  Total: `${state.confirmed}`,
+  Deaths: `${state.deaths}`,
+  Recoveries: `${state.recovered}`
+}))
+
   return (
     <div className='global-chart-container'>
       <h3>United States Statistics By State</h3>
@@ -25,7 +35,7 @@ const USChart = props => {
           <BarChart
             width={800}
             height={500}
-            data={data}
+            data={usData}
             margin={{
               top: 5,
               right: 30,

@@ -5,6 +5,9 @@ import GlobalChartContainer from './containers/GlobalChartContainer';
 import TopCardsContainer from './containers/TopCardsContainer';
 import PieChartComponent from './components/PieChart';
 import RadialChart from './components/RadialChart';
+import USChartContainer from './containers/USChartContainer';
+import CanadaChartContainer from './containers/CanadaChartContainer';
+import AustraliaChartContainer from './containers/AustraliaChartContainer';
 // import AfricaChart from './components/AfricaChart';
 // import AustraliaChart from './components/AustraliaChart';
 // import CanadaChart from './components/CanadaChart';
@@ -12,7 +15,7 @@ import RadialChart from './components/RadialChart';
 // import LatinAmericaChart from './components/LatinAmericaChart';
 // import USChart from './components/USChart';
 import About from './components/About';
-import { getUsa, getAusCan } from './helpers/fetchData';
+import { getAusCan } from './helpers/fetchData';
 // import { data } from './helpers/data';
 import { useAxios } from 'use-axios-client';
 
@@ -21,20 +24,11 @@ import './App.css';
 const App = () => {
 	const [global, setGlobal] = useState([]);
   const [worldData, setWorldData] = useState([])
-  const [usa, setUsa] = useState([]);
   const [australia, setAustralia] = useState([]);
   const [canada, setCanada] = useState([]);
   const [countries, setCountries] = useState([]);
   
 	useEffect(() => {    
-    getUsa
-			.then(response => {
-				setUsa(response.data);
-			})
-			.catch(error => {
-				console.log('The data was not returned', error);
-      });
-
     getAusCan
       .then(response => {
         setAustralia(response.data.locations.slice(8, 17));
@@ -51,14 +45,16 @@ const App = () => {
 			<div className='body'>
 				<div>
 					<TopCardsContainer/>
-					{/* <GlobalChart global={global} worldData={worldData} /> */}
           <GlobalChartContainer />
-          {/* <USChart usa={usa} />
-          <AustraliaChart australia={australia} />
+          <USChartContainer />
+          <CanadaChartContainer />
+          <AustraliaChartContainer />
+          
+          {/* <AustraliaChart australia={australia} />
           <CanadaChart canada={canada} />
           <AfricaChart africa={countries} />
           <EuropeChart europe={countries} />
-          <LatinAmericaChart latinAmerica={countries} /> */}
+          <LatinAmericaChart latinAmerica={countries} />  */}
     		</div>
         <div>
           <div className='other-data-container'>
