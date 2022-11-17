@@ -8,6 +8,7 @@ import RadialChart from './components/RadialChart';
 import USChartContainer from './containers/USChartContainer';
 import CanadaChartContainer from './containers/CanadaChartContainer';
 import AustraliaChartContainer from './containers/AustraliaChartContainer';
+import NorthAmericaChartContainer from './containers/NorthAmericaChartContainer';
 // import AfricaChart from './components/AfricaChart';
 // import AustraliaChart from './components/AustraliaChart';
 // import CanadaChart from './components/CanadaChart';
@@ -49,10 +50,11 @@ const App = () => {
           <USChartContainer />
           <CanadaChartContainer />
           <AustraliaChartContainer />
+          <NorthAmericaChartContainer />
           
-          {/* <AustraliaChart australia={australia} />
-          <CanadaChart canada={canada} />
-          <AfricaChart africa={countries} />
+    
+  
+          {/* <AfricaChart africa={countries} />
           <EuropeChart europe={countries} />
           <LatinAmericaChart latinAmerica={countries} />  */}
     		</div>
