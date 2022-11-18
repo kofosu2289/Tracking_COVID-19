@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   BarChart,
   Bar,
@@ -7,31 +7,31 @@ import {
   Tooltip,
   Legend,
   Brush,
-  ResponsiveContainer
-} from 'recharts';
+  ResponsiveContainer,
+} from "recharts";
 
-import '../App.css'
+import "../App.css";
 
-const NorthAmericaChart = props => {
+const NorthAmericaChart = (props) => {
   // const data = props.usa.map(state => ({
   //   name: `${state.state}`,
   //   Total: `${state.cases}`,
   //   Deaths: `${state.deaths}`,
   //   Recoveries: `${state.cases - state.active}`
   // }));
-const {data} = props
-const northAmericaData = data.map(country => ({
-  name: `${country.Country}`,
-  Total: `${country.TotalCases}`,
-  Deaths: `${country.TotalDeaths}`,
-  Recoveries: `${Number(country.TotalRecovered)}`
-}))
+  const { data } = props;
+  const northAmericaData = data.map((country) => ({
+    name: `${country.Country}`,
+    Total: `${country.TotalCases}`,
+    Deaths: `${country.TotalDeaths}`,
+    Recoveries: `${Number(country.TotalRecovered)}`,
+  }));
 
   return (
-    <div className='global-chart-container'>
+    <div className="global-chart-container">
       <h3>North America Statistics By Country</h3>
-      <div className='global-chart'>
-        <ResponsiveContainer width={'98%'} height={500}>
+      <div className="global-chart">
+        <ResponsiveContainer width={"98%"} height={500}>
           <BarChart
             width={800}
             height={500}
@@ -39,20 +39,20 @@ const northAmericaData = data.map(country => ({
             margin={{
               top: 5,
               right: 30,
-              bottom: 5
+              bottom: 5,
             }}
           >
-            <CartesianGrid strokeDasharray='3 3' />
-            <XAxis dataKey='name' />
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
             <Tooltip />
             <Legend />
-            <Bar dataKey='Total' fill='#64DD9C' />
-            <Bar dataKey='Deaths' fill='#F65064' />
-            <Bar dataKey='Recoveries' fill='#449BE2' />
+            <Bar dataKey="Total" fill="#64DD9C" />
+            <Bar dataKey="Deaths" fill="#F65064" />
+            <Bar dataKey="Recoveries" fill="#449BE2" />
             <Brush
-              dataKey='name'
+              dataKey="name"
               height={20}
-              stroke='gray'
+              stroke="gray"
               startIndex={0}
               endIndex={7}
             ></Brush>
@@ -61,6 +61,6 @@ const northAmericaData = data.map(country => ({
       </div>
     </div>
   );
-}
+};
 
 export default NorthAmericaChart;

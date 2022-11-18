@@ -1,7 +1,6 @@
 import React from "react";
 
-import '../App.css';
-
+import "../App.css";
 
 const TopCards = (props) => {
   const { data } = props;

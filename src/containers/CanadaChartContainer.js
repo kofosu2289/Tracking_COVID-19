@@ -2,14 +2,16 @@ import React from "react";
 import { useAxios } from "use-axios-client";
 import LoadingSpinner from "../components/LoadingSpinner/LoadingSpinner";
 import CanadaChart from "../components/CanadaChart";
+import { apiBaseLink, apiLinkPrefixForProvincesAndStates } from "../globals";
+
 
 const CanadaChartContainer = () => {
   const { data, error, loading } = useAxios({
     method: 'GET',
-    url: 'https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/api-covid-data/reports/CAN',
+    url: `${apiLinkPrefixForProvincesAndStates}CAN`,
     headers: {
       'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
-      'X-RapidAPI-Host': 'vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com'
+      'X-RapidAPI-Host': apiBaseLink
     }
   });
 

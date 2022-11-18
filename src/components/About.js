@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 const About = () => {
   return (
-    <div className='about-container'>
+    <div className="about-container">
       <h2>About COVID-19</h2>
       <h3>What Is COVID-19</h3>
       <p>COVID-19 Stands For COronaVIrus Disease 2019</p>
@@ -38,28 +38,28 @@ const About = () => {
         <li>Call Ahead Before Visiting Your Doctor</li>
       </ul>
       <br />
-      <p className='source'>
-        Source:{' '}
+      <p className="source">
+        Source:{" "}
         <a
-          href='https://www.cdc.gov/coronavirus/2019-ncov/index.html'
-          target='_blank'
-          rel='noopener noreferrer'
+          href="https://www.cdc.gov/coronavirus/2019-ncov/index.html"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Center for Disease Control
         </a>
       </p>
-      <p className='source'>
-        Data Source:{' '}
+      <p className="source">
+        Data Source:{" "}
         <a
-          href='https://rapidapi.com/organization/vaccovidlive'
-          target='_blank'
-          rel='noopener noreferrer'
+          href="https://rapidapi.com/organization/vaccovidlive"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           VACCOVID
         </a>
       </p>
     </div>
   );
-}
+};
 
 export default About;
