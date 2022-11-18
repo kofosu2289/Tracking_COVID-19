@@ -48,6 +48,16 @@ const About = () => {
           Center for Disease Control
         </a>
       </p>
+      <p className='source'>
+        Data Source:{' '}
+        <a
+          href='https://rapidapi.com/organization/vaccovidlive'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          VACCOVID
+        </a>
+      </p>
     </div>
   );
 }

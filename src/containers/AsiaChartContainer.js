@@ -1,12 +1,12 @@
 import React from "react";
 import { useAxios } from "use-axios-client";
 import LoadingSpinner from "../components/LoadingSpinner/LoadingSpinner";
-import AfricaChart from "../components/AfricaChart";
+import AsiaChart from "../components/AsiaChart";
 
-const AfricaChartContainer = () => {
+const AsiaChartContainer = () => {
   const { data, error, loading } = useAxios({
     method: 'GET',
-    url: 'https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/africa',
+    url: 'https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/asia',
     headers: {
       'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
       'X-RapidAPI-Host': 'vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com'
@@ -17,9 +17,9 @@ const AfricaChartContainer = () => {
     <>
       {loading && <LoadingSpinner />}
       {error && <div>{error.message}</div>}
-      {data && <AfricaChart data={data} />}
+      {data && <AsiaChart data={data} />}
     </>
   );
 };
 
-export default AfricaChartContainer;
+export default AsiaChartContainer;

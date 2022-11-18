@@ -12,9 +12,9 @@ import {
 
 import '../App.css'
 
-const AfricaChart = props => {
+const AsiaChart = props => {
   const { data } = props
-  const africaData = data.map(country => ({
+  const asiaData = data.map(country => ({
     name: `${country.Country}`,
     Total: `${country.TotalCases}`,
     Deaths: `${country.TotalDeaths == null ? 0 : country.TotalDeaths}`,
@@ -22,11 +22,11 @@ const AfricaChart = props => {
   }));
   return (
     <div className='global-chart-container'>
-      <h3>Africa Statistics By Country</h3>
+      <h3>Asia Statistics By Country</h3>
       <div className='global-chart'>
         <ResponsiveContainer width={'98%'} height={500}>
           <BarChart
-            data={africaData}
+            data={asiaData}
             margin={{
               top: 5,
               right: 30,
@@ -54,4 +54,4 @@ const AfricaChart = props => {
   );
 }
 
-export default AfricaChart;
+export default AsiaChart;
