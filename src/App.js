@@ -10,6 +10,7 @@ import CanadaChartContainer from './containers/CanadaChartContainer';
 import AustraliaChartContainer from './containers/AustraliaChartContainer';
 import NorthAmericaChartContainer from './containers/NorthAmericaChartContainer';
 import SouthAmericaChartContainer from './containers/SouthAmericaChartContainer';
+import EuropeChartContainer from './containers/EuropeChartContainer';
 // import AfricaChart from './components/AfricaChart';
 // import AustraliaChart from './components/AustraliaChart';
 // import CanadaChart from './components/CanadaChart';
@@ -53,6 +54,7 @@ const App = () => {
           <AustraliaChartContainer />
           <NorthAmericaChartContainer />
           <SouthAmericaChartContainer />
+          <EuropeChartContainer />
           
     
   

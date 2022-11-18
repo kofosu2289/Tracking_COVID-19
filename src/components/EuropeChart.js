@@ -10,45 +10,13 @@ import {
   ResponsiveContainer
 } from 'recharts';
 
+import '../App.css'
+
 const EuropeChart = props => {
-  const countries = props.europe.filter(
-    name =>
-      name.Country === 'Italy' ||
-      name.Country === 'Spain' ||
-      name.Country === 'Germany' ||
-      name.Country === 'France' ||
-      name.Country === 'Switzerland' ||
-      name.Country === 'Belgium' ||
-      name.Country === 'Netherlands' ||
-      name.Country === 'Austria' ||
-      name.Country === 'Portugal' ||
-      name.Country === 'Norway' ||
-      name.Country === 'Sweden' ||
-      name.Country === 'Czechia' ||
-      name.Country === 'Ireland' ||
-      name.Country === 'Denmark' ||
-      name.Country === 'Romania' ||
-      name.Country === 'Poland' ||
-      name.Country === 'Luxembourg' ||
-      name.Country === 'Greece' ||
-      name.Country === 'Croatia' ||
-      name.Country === 'Serbia' ||
-      name.Country === 'Slovania' ||
-      name.Country === 'Estonia' ||
-      name.Country === 'Lithuania' ||
-      name.Country === 'Hungary' ||
-      name.Country === 'Latvia' ||
-      name.Country === 'Bulgaria' ||
-      name.Country === 'Slovakia' ||
-      name.Country === 'San Morino' ||
-      name.Country === 'Cyprus' ||
-      name.Country === 'Albania' ||
-      name.Country === 'Malta' ||
-      name.Country === 'Belarus'
-  );
-  const data = countries.map(country => ({
+  const { data } = props
+  const europeData = data.map(country => ({
     name: `${country.Country}`,
-    Total: `${country.TotalConfirmed}`,
+    Total: `${country.TotalCases}`,
     Deaths: `${country.TotalDeaths == null ? 0 : country.TotalDeaths}`,
     Recoveries: `${country.TotalRecovered == null ? 0 : country.TotalRecovered}`
   }));
@@ -60,7 +28,7 @@ const EuropeChart = props => {
           <BarChart
             width={800}
             height={500}
-            data={data}
+            data={europeData}
             margin={{
               top: 5,
               right: 30,
